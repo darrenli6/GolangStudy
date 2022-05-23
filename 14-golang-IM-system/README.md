@@ -7,6 +7,20 @@
 git tag v1.0.0
 ```
 
+- 1.1 tag与提交绑定
+
+
+```
+darren@darrendeMacBook-Pro 14-golang-IM-system % git commit -m "在线用户"
+[test 68fc2d0] 在线用户
+ 4 files changed, 129 insertions(+), 2 deletions(-)
+ create mode 100644 14-golang-IM-system/user.go
+
+
+
+git tag V0.2 68fc2d0
+```
+
 - 2. 查看是否成功
 ```
 git tag
@@ -45,8 +59,10 @@ git push origin tagName //提交单个tag
 ## 服务端
 
 ```
-darren@darrendeMacBook-Pro 14-golang-IM-system % go build -o server server.go main.go
-darren@darrendeMacBook-Pro 14-golang-IM-system % ./server 
+ go build -o server server.go main.go user.go
+
+ 
+  ./server 
 ```
 
 
@@ -56,3 +72,4 @@ darren@darrendeMacBook-Pro 14-golang-IM-system % ./server
 ```
 nc 127.0.0.1 8888
 ```
+
