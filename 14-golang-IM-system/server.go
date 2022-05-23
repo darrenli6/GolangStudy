@@ -53,15 +53,9 @@ func (this *Server) Broadcast(user *User, msg string) {
 func (this *Server) Handle(conn net.Conn) {
 	fmt.Println("连接建立成功")
 
-	user := NewUser(conn)
+	user := NewUser(conn, this)
 
-	// 用户线上的了 将用户加入到onlineMap中
-	this.mapLock.Lock()
-	this.OnlineMap[user.Name] = user
-	this.mapLock.Unlock()
-	// 广播当前用户上线消息
-
-	this.Broadcast(user, "已经上线")
+	user.Online()
 
 	// 接受客户端发送的消息
 	go func() {
@@ -69,7 +63,7 @@ func (this *Server) Handle(conn net.Conn) {
 		for {
 			n, err := conn.Read(buf)
 			if n == 0 {
-				this.Broadcast(user, "下线")
+				user.Offline()
 				return
 			}
 			if err != nil && err != io.EOF {
@@ -79,7 +73,7 @@ func (this *Server) Handle(conn net.Conn) {
 			//提取用户的消息 取出 \n
 			msg := string(buf[:n-1])
 			// 将消息进行转播
-			this.Broadcast(user, msg)
+			user.DoMessage(msg)
 
 		}
 	}()

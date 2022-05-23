@@ -53,6 +53,16 @@ git push origin --tags //提交全部tag
 git push origin tagName //提交单个tag
 ```
  
+- 如果本地没有代码仓库：
+
+```
+git clone <git项目的地址>
+git tag
+git checkout <tag-name>
+
+```
+
+
 
 # 即实系统
 
@@ -61,7 +71,7 @@ git push origin tagName //提交单个tag
 ```
  go build -o server server.go main.go user.go
 
- 
+
   ./server 
 ```
 
