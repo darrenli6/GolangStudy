@@ -5,6 +5,7 @@ import (
 	"io"
 	"net"
 	"sync"
+	"time"
 )
 
 // 监听message广播消息channel的goroutine 一旦有消息就发送给全部在线的user
@@ -57,6 +58,9 @@ func (this *Server) Handle(conn net.Conn) {
 
 	user.Online()
 
+	// 监听用户是否是活跃的channel
+	isLive := make(chan bool)
+
 	// 接受客户端发送的消息
 	go func() {
 		buf := make([]byte, 4096)
@@ -75,11 +79,35 @@ func (this *Server) Handle(conn net.Conn) {
 			// 将消息进行转播
 			user.DoMessage(msg)
 
+			//代表活跃
+			isLive <- true
+
 		}
 	}()
 
 	// 当前handler 阻塞
-	select {}
+	// 定时器
+	for {
+		select {
+		case <-isLive:
+			// 重置定时器
+			// 不做任何事情 为了激活select 更新下面定时器
+
+		case <-time.After(time.Second * 100):
+			// 超时
+			// 将当前的客户端强制关闭
+			user.SendMsg("你被踢了")
+
+			// 销毁资源
+			close(user.C)
+			//关闭连接
+			conn.Close()
+
+			// 退出当前的handle
+			return
+
+		}
+	}
 
 }
 
