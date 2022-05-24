@@ -90,6 +90,38 @@ func (this *User) DoMessage(msg string) {
 
 		}
 
+	} else if len(msg) > 4 && msg[:3] == "to|" {
+		// 消息格式  to|张三|消息内容
+
+		// 1获取对方的用户名
+		remoteName := strings.Split(msg, "|")[1]
+
+		if remoteName == "" {
+			this.SendMsg("消息不正确,请使用\"to|张三|消息内容\" 格式 \n ")
+			return
+		}
+
+		// 2 根据用户名 得到对方user对象
+
+		remoteUser, ok := this.server.OnlineMap[remoteName]
+		if !ok {
+			this.SendMsg("该用户名不存在\n")
+			return
+		}
+		if remoteUser.Name == this.Name {
+			this.SendMsg("请勿给自己发消息\n")
+			return
+		}
+
+		// 3 获取消息内容 通过对方的user对象将消息内容发送过去
+		content := strings.Split(msg, "|")[2]
+		if content == "" {
+			this.SendMsg("无消息内容，请重新发送\n")
+			return
+		}
+
+		remoteUser.SendMsg(this.Name + "对您说:" + content + "\n")
+
 	} else {
 		this.server.Broadcast(this, msg)
 	}

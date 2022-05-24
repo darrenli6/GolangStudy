@@ -93,7 +93,7 @@ func (this *Server) Handle(conn net.Conn) {
 			// 重置定时器
 			// 不做任何事情 为了激活select 更新下面定时器
 
-		case <-time.After(time.Second * 100):
+		case <-time.After(time.Second * 10000):
 			// 超时
 			// 将当前的客户端强制关闭
 			user.SendMsg("你被踢了")
