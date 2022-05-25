@@ -88,3 +88,35 @@ nc 127.0.0.1 8888
 ```
 go build -o client client.go 
 ```
+
+
+
+## Go生态
+
+- web框架 
+  - beego  
+  - gin
+  - echo 
+  - Iris 重量级的
+- 微服务框架
+  - Go kit 
+  - Istio 
+- 容器编排
+  - k8s
+  - swarm
+- 服务发现
+  - consul
+- 存储引擎
+  - k/v存储
+  - 分布式存储 tidb
+- 静态建站
+  - hugo 
+- 中间件
+  - 消息队列 nsq
+  - TCP长连接 zinx  
+  - leaf(游戏服务器)
+  - RPC   gRPC   
+  - redis  codis
+- 爬虫框架
+  - go query 爬虫效率比python高
+  
