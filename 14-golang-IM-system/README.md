@@ -83,3 +83,8 @@ git checkout <tag-name>
 nc 127.0.0.1 8888
 ```
 
+- 编译客户端
+
+```
+go build -o client client.go 
+```
