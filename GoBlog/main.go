@@ -80,6 +80,10 @@ func setupDBEngine() error {
 
 }
 
+// @title 博客系统
+// @version 1.0
+// @description go的项目
+// @termsOfService https://github.com/darrenli/
 func main() {
 
 	gin.SetMode(global.ServerSetting.RunMode)

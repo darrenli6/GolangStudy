@@ -6,6 +6,7 @@ import (
 	"github.com/darrenli6/blog-server/pkg/setting"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
+	"time"
 )
 
 type Model struct {
@@ -38,4 +39,23 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 	db.DB().SetMaxOpenConns(databaseSetting.MaxOpenConns)
 	return db, nil
 
+}
+
+func updateTimeStampForCreateCallback(scope *gorm.Scope) {
+	if !scope.HasError() {
+
+		nowTime := time.Now().Unix()
+		if createTimeField, ok := scope.FieldByName("CreatedOn"); ok {
+			if createTimeField.IsBlank {
+				_ = createTimeField.Set(nowTime)
+			}
+		}
+
+		if ModifyTimeField, ok := scope.FieldByName("ModifiedOn"); ok {
+			if ModifyTimeField.IsBlank {
+				_ = ModifyTimeField.Set(nowTime)
+			}
+		}
+
+	}
 }

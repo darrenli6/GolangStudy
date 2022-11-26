@@ -1,1 +1,12 @@
 2022/11/25 16:39:30 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669365570952245000}
+2022/11/25 17:09:44 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669367384076319000}
+2022/11/25 17:11:40 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669367500391906000}
+2022/11/25 17:13:48 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669367628950500000}
+2022/11/25 17:28:42 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368522240210000}
+2022/11/25 17:30:14 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368614790382000}
+2022/11/25 17:32:16 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368736840657000}
+2022/11/25 17:32:41 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368761223970000}
+2022/11/25 17:33:07 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368787709177000}
+2022/11/25 17:35:07 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368907140585000}
+2022/11/25 22:05:23 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669385123506897000}
+2022/11/25 22:07:02 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: State必须是[0 1]中的一个","time":1669385222583236000}
