@@ -10,3 +10,23 @@
 2022/11/25 17:35:07 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368907140585000}
 2022/11/25 22:05:23 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669385123506897000}
 2022/11/25 22:07:02 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: State必须是[0 1]中的一个","time":1669385222583236000}
+2022/11/26 23:18:56 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669475936073477000}
+2022/11/26 23:21:43 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name长度必须至少为3个字符","time":1669476103494248000}
+2022/11/26 23:21:50 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CreateTag ","time":1669476110134890000}
+2022/11/26 23:24:27 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name为必填字段,CreatedBy为必填字段","time":1669476267530831000}
+2022/11/26 23:25:22 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: CreatedBy为必填字段","time":1669476322084242000}
+2022/11/26 23:26:56 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CountTag Error 1054: Unknown column 'is_deal' in 'where clause'","time":1669476416952928000}
+2022/11/26 23:26:59 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CountTag Error 1054: Unknown column 'is_deal' in 'where clause'","time":1669476419537265000}
+2022/11/26 23:27:24 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669476444719247000}
+2022/11/27 10:13:54 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: ModifiedBy必须是[0 1]中的一个,Name为必填字段","time":1669515234606928000}
+2022/11/27 10:15:20 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: ModifiedBy为必填字段","time":1669515320910041000}
+2022/11/27 10:15:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: ModifiedBy必须是[0 1]中的一个","time":1669515347911843000}
+2022/11/27 10:15:55 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669515355970124000}
+2022/11/27 10:19:18 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: CreatedBy为必填字段","time":1669515558225935000}
+2022/11/27 10:20:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669515639215215000}
+2022/11/27 10:20:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: CreatedBy为必填字段","time":1669515647193823000}
+2022/11/27 10:20:55 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CreateTag ","time":1669515655777083000}
+2022/11/27 10:22:27 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669515747320068000}
+2022/11/27 10:31:02 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669516262821019000}
+2022/11/27 10:31:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name长度必须至少为3个字符","time":1669516299798256000}
+2022/11/27 10:32:26 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669516346361306000}

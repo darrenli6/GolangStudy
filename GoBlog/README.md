@@ -32,3 +32,13 @@ go get -u github.com/go-playground/validator/v10
 
 curl -X GET http://127.0.0.1:8000/api/v1/tags?state=6
 
+curl -X POST http://127.0.0.1:8000/api/v1/tags -F "name=GO11" -F "created_by=demo1"
+
+curl -X POST 'http://127.0.0.1:8000/api/v1/tags?page=1&page_size=2'
+
+curl -X GET 'http://127.0.0.1:8000/api/v1/tags?page=1&page_size=2'
+
+// 修改
+curl -X PUT http://127.0.0.1:8000/api/v1/tags/2 -F state=0  -F "modified_by=darren"
+
+curl -X DELETE http://127.0.0.1:8000/api/v1/tags/1

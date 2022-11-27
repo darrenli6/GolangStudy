@@ -19,7 +19,7 @@ func (t Tag) Count(db *gorm.DB) (int, error) {
 	}
 	db = db.Where("state=?", t.State)
 
-	err := db.Model(&t).Where("is_deal= ?", 0).Count(&count).Error
+	err := db.Model(&t).Where("is_del= ?", 0).Count(&count).Error
 	if err != nil {
 		return 0, err
 	}
@@ -48,9 +48,13 @@ func (t Tag) Create(db *gorm.DB) error {
 	return db.Create(&t).Error
 }
 
-func (t Tag) Update(db *gorm.DB) error {
-	db = db.Model(&Tag{}).Where("id =? and is_del =?", t.ID, 0)
-	return db.Update(t).Error
+func (t Tag) Update(db *gorm.DB, values interface{}) error {
+
+	err := db.Model(t).Where("id =? and is_del =?", t.ID, 0).Updates(values).Error
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func (t Tag) Delete(db *gorm.DB) error {
