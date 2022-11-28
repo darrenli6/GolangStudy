@@ -10,4 +10,10 @@ var (
 	ErrorUpdateTagFailed  = NewError(20000003, "更新标签失败")
 	ErrorDeleteTagFailed  = NewError(20000004, "删除标签失败")
 	ErrorCountTagFailed   = NewError(20000005, "统计标签失败")
+
+	ErrorUploadFileFail       = NewError(20030001, "文件上传失败")
+	UnauthorizedAuthNotExist  = NewError(20030002, "授权不存在")
+	UnauthorizedTokenGenerate = NewError(20030003, "授权不通过")
+	UnauthorizedTokenTimeout  = NewError(20030004, "token超时")
+	UnauthorizedTokenError    = NewError(20030005, "token错误")
 )

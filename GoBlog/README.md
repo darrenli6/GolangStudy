@@ -24,6 +24,8 @@ go install github.com/swaggo/swag/cmd/swag@v1.6.5
 
 go get -u github.com/go-playground/validator/v10
 
+- jwt
+go get -u github.com/dgrijalva/jwt-go@v3.2.0
 
 
 # 接口
@@ -38,7 +40,14 @@ curl -X POST 'http://127.0.0.1:8000/api/v1/tags?page=1&page_size=2'
 
 curl -X GET 'http://127.0.0.1:8000/api/v1/tags?page=1&page_size=2'
 
+
+
 // 修改
 curl -X PUT http://127.0.0.1:8000/api/v1/tags/2 -F state=0  -F "modified_by=darren"
 
 curl -X DELETE http://127.0.0.1:8000/api/v1/tags/1
+
+
+// 上传文件
+
+curl -X POST http://127.0.0.1:8000/upload/file -F file=/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/test.txt -F type=1 

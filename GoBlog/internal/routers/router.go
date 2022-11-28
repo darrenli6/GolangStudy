@@ -1,11 +1,14 @@
 package routers
 
 import (
+	"github.com/darrenli6/blog-server/global"
 	"github.com/darrenli6/blog-server/internal/middleware"
+	"github.com/darrenli6/blog-server/internal/routers/api"
 	v1 "github.com/darrenli6/blog-server/internal/routers/v1"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
+	"net/http"
 )
 
 func NewRouter() *gin.Engine {
@@ -22,7 +25,16 @@ func NewRouter() *gin.Engine {
 
 	tag := v1.NewTag()
 
+	// 权限
+	r.GET("/auth", api.GetAuth)
+	// 上传文件
+	upload := api.NewUpload()
+	r.POST("/upload/file", upload.UploadFile)
+	r.StaticFS("/static", http.Dir(global.AppSetting.UploadSavePath))
+
 	apiv1 := r.Group("/api/v1")
+	apiv1.Use(middleware.JWT())
+
 	{
 
 		apiv1.POST("tags", tag.Create)
@@ -38,5 +50,6 @@ func NewRouter() *gin.Engine {
 		apiv1.GET("/articles", article.List)
 		apiv1.GET("/articles/:id", article.Get)
 	}
+
 	return r
 }

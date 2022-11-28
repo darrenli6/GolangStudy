@@ -30,3 +30,12 @@
 2022/11/27 10:31:02 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669516262821019000}
 2022/11/27 10:31:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name长度必须至少为3个字符","time":1669516299798256000}
 2022/11/27 10:32:26 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669516346361306000}
+2022/11/27 10:46:26 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669517186205935000}
+2022/11/27 22:20:12 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669558812398599000}
+2022/11/27 22:28:53 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669559333075519000}
+2022/11/27 22:32:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc.upload err file suffix is not supported","time":1669559567381419000}
+2022/11/27 22:34:29 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669559669650415000}
+2022/11/27 22:59:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669561179329347000}
+2022/11/27 23:01:28 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.binding error AppKey为必填字段,AppSecret为必填字段","time":1669561288979620000}
+2022/11/27 23:01:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc.CheckAuth err auth info does not exists","time":1669561307456198000}
+2022/11/28 14:08:00 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669615680800786000}
