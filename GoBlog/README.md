@@ -17,6 +17,7 @@ go get -u github.com/swaggo/gin-swagger@v1.2.0
 go get -u github.com/swaggo/files
 go get -u github.com/alecthomas/template
 
+- 下载swagger 
 go install github.com/swaggo/swag/cmd/swag@v1.6.5
 
 
@@ -27,6 +28,42 @@ go get -u github.com/go-playground/validator/v10
 - jwt
 go get -u github.com/dgrijalva/jwt-go@v3.2.0
 
+
+- email 
+go get -u gopkg.in/gomail.v2
+
+- 限流
+
+go get -u github.com/juju/ratelimit@v1.0.1
+
+
+- jaeger的使用
+
+docker  run -d --name jaeger \
+-e COLLECTOR_ZIPKIN_HTTP_PORT=9411 \
+-p 5775:5775/udp \
+-p 6831:6831/udp \
+-p 6832:6832/udp \
+-p 5778:5778 \
+-p 16686:16686 \
+-p 14268:14268 \
+-p 9411:9411 \
+jaegertracing/all-in-one:1.16
+
+5778 jaeger服务端口
+16686 jaeger WebUI
+9411 兼容zipkin的http端口
+
+
+
+- 安装jaeger第三方库
+
+go get -u github.com/opentracing/opentracing-go@v1.1.0
+go get -u github.com/uber/jaeger-client-go@v2.22.1
+
+
+- sql追踪
+go get -u github.com/eddycjy/opentracing-gorm
 
 # 接口
 

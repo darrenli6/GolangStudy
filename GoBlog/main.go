@@ -6,6 +6,7 @@ import (
 	"github.com/darrenli6/blog-server/internal/routers"
 	"github.com/darrenli6/blog-server/pkg/logger"
 	setting2 "github.com/darrenli6/blog-server/pkg/setting"
+	"github.com/darrenli6/blog-server/pkg/tracer"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/natefinch/lumberjack.v2"
 	"log"
@@ -19,6 +20,11 @@ func init() {
 		log.Fatalf("init setupsetting err: %v", err)
 	}
 	err = setupDBEngine()
+	if err != nil {
+		log.Fatalf("init setupDBengine err %v", err)
+	}
+
+	err = setupTracer()
 	if err != nil {
 		log.Fatalf("init setupDBengine err %v", err)
 	}
@@ -46,6 +52,18 @@ func setupLogger() error {
 	return nil
 }
 
+func setupTracer() error {
+	jaegerTracer, _, err := tracer.NewJaegerTrace(
+		"block-service",
+		"127.0.0.1:6831",
+	)
+	if err != nil {
+		return err
+	}
+
+	global.Tracer = jaegerTracer
+	return nil
+}
 func setupSetting() error {
 	setting, err := setting2.NewSetting()
 	if err != nil {
@@ -61,6 +79,11 @@ func setupSetting() error {
 		return err
 	}
 	global.JWTSetting.Expire *= time.Second
+
+	err = setting.ReadSection("Email", &global.EmailSetting)
+	if err != nil {
+		return err
+	}
 
 	err = setting.ReadSection("App", &global.AppSetting)
 	if err != nil {
@@ -95,7 +118,6 @@ func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 	router := routers.NewRouter()
 
-	global.Logger.Infof("%s ", "main")
 	s := &http.Server{
 		Addr:           ":" + global.ServerSetting.HttpPort,
 		Handler:        router,

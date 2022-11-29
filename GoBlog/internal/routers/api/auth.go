@@ -12,6 +12,7 @@ func GetAuth(c *gin.Context) {
 
 	param := service.AuthRequest{}
 
+	global.Logger.Infof(c, "auth")
 	response := app.NewResponse(c)
 
 	valid, errs := app.BindAndValid(c, &param)

@@ -1,41 +1,4 @@
-2022/11/25 16:39:30 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669365570952245000}
-2022/11/25 17:09:44 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669367384076319000}
-2022/11/25 17:11:40 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669367500391906000}
-2022/11/25 17:13:48 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669367628950500000}
-2022/11/25 17:28:42 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368522240210000}
-2022/11/25 17:30:14 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368614790382000}
-2022/11/25 17:32:16 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368736840657000}
-2022/11/25 17:32:41 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368761223970000}
-2022/11/25 17:33:07 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368787709177000}
-2022/11/25 17:35:07 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669368907140585000}
-2022/11/25 22:05:23 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669385123506897000}
-2022/11/25 22:07:02 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: State必须是[0 1]中的一个","time":1669385222583236000}
-2022/11/26 23:18:56 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669475936073477000}
-2022/11/26 23:21:43 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name长度必须至少为3个字符","time":1669476103494248000}
-2022/11/26 23:21:50 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CreateTag ","time":1669476110134890000}
-2022/11/26 23:24:27 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name为必填字段,CreatedBy为必填字段","time":1669476267530831000}
-2022/11/26 23:25:22 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: CreatedBy为必填字段","time":1669476322084242000}
-2022/11/26 23:26:56 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CountTag Error 1054: Unknown column 'is_deal' in 'where clause'","time":1669476416952928000}
-2022/11/26 23:26:59 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CountTag Error 1054: Unknown column 'is_deal' in 'where clause'","time":1669476419537265000}
-2022/11/26 23:27:24 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669476444719247000}
-2022/11/27 10:13:54 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: ModifiedBy必须是[0 1]中的一个,Name为必填字段","time":1669515234606928000}
-2022/11/27 10:15:20 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: ModifiedBy为必填字段","time":1669515320910041000}
-2022/11/27 10:15:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: ModifiedBy必须是[0 1]中的一个","time":1669515347911843000}
-2022/11/27 10:15:55 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669515355970124000}
-2022/11/27 10:19:18 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: CreatedBy为必填字段","time":1669515558225935000}
-2022/11/27 10:20:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669515639215215000}
-2022/11/27 10:20:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: CreatedBy为必填字段","time":1669515647193823000}
-2022/11/27 10:20:55 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc CreateTag ","time":1669515655777083000}
-2022/11/27 10:22:27 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669515747320068000}
-2022/11/27 10:31:02 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669516262821019000}
-2022/11/27 10:31:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.BindingAndValid errs: Name长度必须至少为3个字符","time":1669516299798256000}
-2022/11/27 10:32:26 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669516346361306000}
-2022/11/27 10:46:26 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669517186205935000}
-2022/11/27 22:20:12 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669558812398599000}
-2022/11/27 22:28:53 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669559333075519000}
-2022/11/27 22:32:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc.upload err file suffix is not supported","time":1669559567381419000}
-2022/11/27 22:34:29 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669559669650415000}
-2022/11/27 22:59:39 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669561179329347000}
-2022/11/27 23:01:28 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"app.binding error AppKey为必填字段,AppSecret为必填字段","time":1669561288979620000}
-2022/11/27 23:01:47 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"error","message":"svc.CheckAuth err auth info does not exists","time":1669561307456198000}
-2022/11/28 14:08:00 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 26 main.init.0"],"level":"info","message":"main ","time":1669615680800786000}
+2022/11/28 22:38:10 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 32 main.init.0"],"level":"info","message":"auth","span_id":"2db67bdea55a7d83","time":1669646290662622000,"trace_id":"2db67bdea55a7d83"}
+2022/11/28 22:38:11 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 32 main.init.0"],"level":"info","message":"auth","span_id":"4d3b2ed6949eaf18","time":1669646291371060000,"trace_id":"4d3b2ed6949eaf18"}
+2022/11/28 22:49:19 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 32 main.init.0"],"level":"info","message":"auth","span_id":"26e7abef03d17537","time":1669646959395855000,"trace_id":"26e7abef03d17537"}
+2022/11/28 22:49:19 {"collers":["/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/main.go: 32 main.init.0"],"level":"info","message":"auth","span_id":"3eb787331c595d6f","time":1669646959913133000,"trace_id":"3eb787331c595d6f"}

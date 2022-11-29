@@ -6,6 +6,7 @@ import (
 	"github.com/darrenli6/blog-server/global"
 	"github.com/darrenli6/blog-server/internal/dao"
 	"github.com/darrenli6/blog-server/pkg/upload"
+	otgorm "github.com/eddycjy/opentracing-gorm"
 	"mime/multipart"
 	"os"
 )
@@ -17,7 +18,7 @@ type Service struct {
 
 func New(ctx context.Context) Service {
 	svc := Service{ctx: ctx}
-	svc.dao = dao.New(global.DBEngine)
+	svc.dao = dao.New(otgorm.WithContext(svc.ctx, global.DBEngine))
 	return svc
 }
 
