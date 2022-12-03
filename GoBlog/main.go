@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"github.com/darrenli6/blog-server/global"
 	"github.com/darrenli6/blog-server/internal/model"
 	"github.com/darrenli6/blog-server/internal/routers"
@@ -11,7 +12,14 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 	"log"
 	"net/http"
+	"strings"
 	"time"
+)
+
+var (
+	port    string
+	runMode string
+	config  string
 )
 
 func init() {
@@ -34,6 +42,20 @@ func init() {
 	if err != nil {
 		log.Fatalf("init logger err %v", err)
 	}
+
+	err = setFlag()
+	if err != nil {
+		log.Fatalf("init logger err %v", err)
+	}
+}
+
+func setFlag() error {
+	flag.StringVar(&port, "port", "", "启动端口")
+	flag.StringVar(&runMode, "mode", "", "启动模式")
+	flag.StringVar(&config, "config", "configs/", "指定配置文件路径")
+	flag.Parse()
+
+	return nil
 }
 
 func setupLogger() error {
@@ -65,10 +87,19 @@ func setupTracer() error {
 	return nil
 }
 func setupSetting() error {
-	setting, err := setting2.NewSetting()
+
+	setting, err := setting2.NewSetting(strings.Split(config, ",")...)
 	if err != nil {
 		return err
 	}
+
+	if port != "" {
+		global.ServerSetting.HttpPort = port
+	}
+	if runMode != "" {
+		global.ServerSetting.RunMode = runMode
+	}
+
 	err = setting.ReadSection("Server", &global.ServerSetting)
 	if err != nil {
 		return err

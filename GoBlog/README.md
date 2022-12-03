@@ -88,3 +88,43 @@ curl -X DELETE http://127.0.0.1:8000/api/v1/tags/1
 // 上传文件
 
 curl -X POST http://127.0.0.1:8000/upload/file -F file=/Users/darren/go/src/github.com/darrenli6/GolangStudy/GoBlog/test.txt -F type=1 
+
+
+# 启动问题
+
+`go run main.go -port=8001 -mode=release -config=configs/`
+
+- 打包进二进制文件中
+
+
+`go get github.com/go-bindata/go-bindata/...`
+
+`go install github.com/go-bindata/go-bindata/...`
+
+可以配置文件打包进二进制文件中
+
+`go-bindata -o configs/config.go -pkg=configs  configs/config.yaml`
+
+
+## 配置热更新
+
+```azure
+go get -u golang.org/x/sys...
+go get -u github.com/fsnotify/fsnotify    
+```
+
+## 优雅的重启
+防止客户端访问中断
+
+
+# gRPC
+
+## 安装protoc编译器
+
+`brew install protobuf`
+
+
+## 安装protoc-gen-go插件
+
+go get -u github.com/golang/protobuf/protoc-gen-go@v1.3.3
+go install  github.com/golang/protobuf/protoc-gen-go@v1.3.3
