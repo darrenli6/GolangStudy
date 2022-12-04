@@ -123,8 +123,10 @@ go get -u github.com/fsnotify/fsnotify
 
 `brew install protobuf`
 
+`protoc --version`
 
 ## 安装protoc-gen-go插件
 
 go get -u github.com/golang/protobuf/protoc-gen-go@v1.3.3
 go install  github.com/golang/protobuf/protoc-gen-go@v1.3.3
+
