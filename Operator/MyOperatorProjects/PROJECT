@@ -1,0 +1,6 @@
+domain: my.domain
+layout:
+- go.kubebuilder.io/v3
+projectName: myoperatorprojects
+repo: github.com/darrenli6/GolangStudy/Operator/MyOperatorProjects
+version: "3"
