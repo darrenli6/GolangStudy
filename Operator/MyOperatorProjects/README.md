@@ -25,3 +25,8 @@ kubebuilder create api  \
 
 
 
+
+# make manifests
+
+命令生成clusterRole和CRD配置
+
