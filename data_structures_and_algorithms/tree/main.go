@@ -62,7 +62,7 @@ func NewNode(left, right *Node) *Node {
 // 根节点 -- 左子树 -- 右子树
 func PrintBT(n *Node) {
 	if n != nil {
-		fmt.Println("%v ", n.Data)
+		fmt.Printf("%v ", n.Data)
 
 		if n.Left != nil || n.Right != nil {
 			fmt.Printf("(")
@@ -117,4 +117,80 @@ func PreOrder(n *Node) {
 		PreOrder(n.Left)
 		PreOrder(n.Right)
 	}
+}
+
+// InOrder 中序遍历，采用递归算法
+// 左子树-->根节点-->右子树
+func InOrder(n *Node) {
+	if n != nil {
+		InOrder(n.Left)
+		fmt.Printf("%v ", n.Data)
+		InOrder(n.Right)
+	}
+}
+
+// PostOrder 后序遍历，采用递归算法
+// 左子树-->右子树-->根节点
+func PostOrder(n *Node) {
+	if n != nil {
+		PostOrder(n.Left)
+		PostOrder(n.Right)
+		fmt.Printf("%v ", n.Data)
+	}
+}
+
+// BreadthTravel 广度遍历
+func BreadthTravel(n *Node) {
+	var queue []*Node
+	queue = []*Node{n}
+
+	for len(queue) > 0 {
+		root := queue[0]
+		fmt.Printf("%v ", root.Data)
+		queue = queue[1:]
+		if root.Left != nil {
+			queue = append(queue, root.Left)
+		}
+		if root.Right != nil {
+			queue = append(queue, root.Right)
+		}
+	}
+}
+
+func main() {
+	//创建二叉树
+	root := NewNode(nil, nil)
+	root.SetData("root")
+
+	a := NewNode(nil, nil)
+	a.SetData("left")
+
+	al := NewNode(nil, nil)
+	al.SetData(100)
+
+	ar := NewNode(nil, nil)
+	ar.SetData(3.14)
+
+	a.Left = al
+	a.Right = ar
+
+	b := NewNode(nil, nil)
+	b.SetData("right")
+
+	root.Left = a
+	root.Right = b
+
+	root.PrintBT()
+	fmt.Println()
+
+	// 使用 Order 接口实现对二叉树的基本操作
+	var it Order  // 定义接口类型
+	it = root     // 将*Node类型变量赋值给接口，*Node实现了接口的所有方法
+	it.PreOrder() // 先序遍历
+	fmt.Println()
+	it.InOrder() // 中序遍历
+	fmt.Println()
+	it.PostOrder() // 后序遍历
+	fmt.Println()
+	it.BreadthTravel() // 广度遍历
 }
