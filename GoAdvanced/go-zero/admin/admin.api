@@ -1,0 +1,53 @@
+service admin-api {
+	// 设备列表
+	@handler DeviceListHandler
+	get /device/list(DeviceListRequest) returns (DeviceListReply)
+	
+	// 产品管理
+	// 产品列表
+	@handler ProductListHandler
+	get /product/list(ProductListRequest) returns (ProductListReply)
+	
+}
+
+type ProductListRequest {
+	BaseRequest
+}
+
+type ProductListReply {
+	List  []*ProductListBaisc `json:"list"`
+	Count int64               `json:"count"`
+}
+
+type ProductListBaisc {
+	Identity  string `json:"identity"`
+	Key       string `json:"key"`
+	Name      string `json:"name"`
+	Desc      string `json:"desc"`
+	CreatedAt string `json:"created_at"`
+}
+
+type DeviceListRequest {
+	BaseRequest
+}
+
+type DeviceListBasic {
+	Identity       string `json:"identity"`
+	Name           string `json:"name"`
+	Key            string `json:"key"`
+	Secret         string `json:"secret"`
+	ProductName    string `json:"product_name"`
+	LastOnlineTime int64  `json:"last_online_time"`
+}
+
+type DeviceListReply {
+	List  []*DeviceListBasic `json:"list"`
+	Count int64              `json:"count"`
+}
+
+// 公共 type
+type BaseRequest {
+	Page int    `json:"page,optional"`
+	Size int    `json:",optional"`
+	Name string `json:"name,optional"`
+}
