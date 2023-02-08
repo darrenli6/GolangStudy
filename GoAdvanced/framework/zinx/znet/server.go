@@ -1,6 +1,7 @@
 package znet
 
 import (
+	"errors"
 	"fmt"
 	"github.com/darrenli6/GolangStudy/GoAdvanced/framework/zinx/ziface"
 	"net"
@@ -18,6 +19,17 @@ type Server struct {
 
 	// 服务器监听的端口
 	Port int
+}
+
+// 定义当前客户端链接所绑定的handle api 目前这个handle是写死的
+func CallBackToClient(conn *net.TCPConn, data []byte, cnt int) error {
+
+	fmt.Println("[Conn handle] CallbackToClient...")
+	if _, err := conn.Write(data[:cnt]); err != nil {
+		fmt.Println("write back buf err", err)
+		return errors.New("CallbackToClient error")
+	}
+	return nil
 }
 
 func (s *Server) Start() {
@@ -39,6 +51,9 @@ func (s *Server) Start() {
 
 		fmt.Println("start zinx server succ ", s.Name, " success Listenning")
 
+		var cid uint32
+		cid = 0
+
 		// 3 阻塞等待客户端链接，处理客户端链接业务 读写
 		for {
 			conn, err := listener.AcceptTCP()
@@ -48,23 +63,12 @@ func (s *Server) Start() {
 			}
 			// 已经与客户端链接，做一些的业务，做一个基本的最大512字节长度的回显业务
 
-			go func() {
-				for {
-					buf := make([]byte, 512)
-					cnt, err := conn.Read(buf)
-					if err != nil {
-						fmt.Println("rec buf err ", err)
-						continue
-					}
+			dealConn := NewConnection(conn, cid, CallBackToClient)
+			cid++
+			//启动当前的业务
 
-					fmt.Printf("recv client buf %s, cnt %d \n", buf, cnt)
-					if _, err := conn.Write(buf[:cnt]); err != nil {
-						fmt.Println("write back buf err", err)
-						continue
-					}
+			go dealConn.Start()
 
-				}
-			}()
 		}
 	}()
 
