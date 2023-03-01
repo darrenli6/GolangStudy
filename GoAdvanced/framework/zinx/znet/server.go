@@ -1,7 +1,6 @@
 package znet
 
 import (
-	"errors"
 	"fmt"
 	"github.com/darrenli6/GolangStudy/GoAdvanced/framework/zinx/ziface"
 	"net"
@@ -19,17 +18,8 @@ type Server struct {
 
 	// 服务器监听的端口
 	Port int
-}
-
-// 定义当前客户端链接所绑定的handle api 目前这个handle是写死的
-func CallBackToClient(conn *net.TCPConn, data []byte, cnt int) error {
-
-	fmt.Println("[Conn handle] CallbackToClient...")
-	if _, err := conn.Write(data[:cnt]); err != nil {
-		fmt.Println("write back buf err", err)
-		return errors.New("CallbackToClient error")
-	}
-	return nil
+	// 当前server添加一个router
+	Router ziface.IRouter
 }
 
 func (s *Server) Start() {
@@ -63,7 +53,7 @@ func (s *Server) Start() {
 			}
 			// 已经与客户端链接，做一些的业务，做一个基本的最大512字节长度的回显业务
 
-			dealConn := NewConnection(conn, cid, CallBackToClient)
+			dealConn := NewConnection(conn, cid, s.Router)
 			cid++
 			//启动当前的业务
 
@@ -89,6 +79,11 @@ func (s *Server) Serve() {
 	select {}
 
 }
+func (s *Server) AddRouter(router ziface.IRouter) {
+	s.Router = router
+	fmt.Println("Add Router Succ!!")
+
+}
 
 func NewServe(name string) ziface.IServer {
 	s := &Server{
@@ -96,6 +91,8 @@ func NewServe(name string) ziface.IServer {
 		IpVersion: "tcp4",
 		Ip:        "0.0.0.0",
 		Port:      10010,
+		Router:    nil,
 	}
+
 	return s
 }

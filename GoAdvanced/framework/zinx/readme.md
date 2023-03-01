@@ -45,4 +45,9 @@
       - 处理业务之前的方法
       - 处理业务的主方法
       - 处理业务之后的方法
+  * 集成Router模块
+    + IServer添加路由添加功能
+    + Server类添加Router成员
+    + Connection绑定一个路由成员
+    + 在Connection 调用已经注册的Router处理业务
       
