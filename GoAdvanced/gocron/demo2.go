@@ -1,27 +1,42 @@
 package main
 
 import (
-	"errors"
-	"github.com/jasonlvhit/gocron"
+	"fmt"
+	"github.com/avast/retry-go"
+	"github.com/go-co-op/gocron"
+	"time"
 )
 
-func task1() error {
-	err := errors.New("error")
-	// 处理逻辑
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
 func main() {
+	// 创建一个新的调度器
+	s := gocron.NewScheduler(time.Local)
 
-	// 创建一个新的定时器
-	s := gocron.NewScheduler()
+	// 设置任务
+	task := func() error {
+		// 这里是您的任务代码
+		//return fmt.Errorf("发生了一个错误")
+		fmt.Println("执行任务")
+		return nil
+	}
 
-	// 设置任务，并指定错误恢复和重试的次数
-	s.Every(2).Seconds().Do(task1)
+	// 设置任务执行的时间间隔
+	_, err := s.Every(2).Seconds().Do(func() {
+		err := retry.Do(task, retry.Attempts(3), retry.Delay(time.Second))
+		if err != nil {
+			fmt.Println(err)
+		}
 
-	// 启动定时器
-	<-s.Start()
+	})
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// 启动调度器
+	s.StartAsync()
+
+	// 等待调度器退出
+	s.StartBlocking()
+
 }
