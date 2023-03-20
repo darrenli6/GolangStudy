@@ -5,6 +5,7 @@ import (
 	"flag"
 	pb "github.com/darrenli6/GolangStudy/GoAdvanced/grpc/proto"
 	"google.golang.org/grpc"
+	"io"
 	"log"
 )
 
@@ -20,7 +21,10 @@ func main() {
 	defer conn.Close()
 	client := pb.NewGreeterClient(conn)
 
-	err := SayHello(client)
+	//err := SayHello(client)
+	err := SayList(client, &pb.HelloRequest{
+		Name: "darren",
+	})
 	if err != nil {
 		log.Fatalf("client.say hello err %v", err)
 	}
@@ -34,5 +38,24 @@ func SayHello(client pb.GreeterClient) error {
 		return err
 	}
 	log.Printf("client.say hello resp %s", resp.Message)
+	return nil
+}
+
+func SayList(client pb.GreeterClient, r *pb.HelloRequest) error {
+	stream, err := client.SayList(context.Background(), r)
+	if err != nil {
+		return err
+	}
+	for {
+		resp, err := stream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		log.Printf("resp, %v ", resp)
+	}
+
 	return nil
 }
